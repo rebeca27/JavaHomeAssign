@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -30,6 +31,8 @@ public class FirstProblemService {
             throw new UnsupportedOperationException("These words are not valid: " + invalidWords);
         }
     }
+
+
 
 
     private void saveWordToExternalApi(String word) {

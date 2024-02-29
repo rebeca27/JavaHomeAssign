@@ -1,3 +1,54 @@
+greeting:
+  morning:
+    en: "Good morning, {name}!"
+    es: "¡Buenos días, {name}!"
+    fr: "Bonjour, {name}!"
+    ro: "Bună dimineața, {name}!"
+    it: "Buongiorno, {name}!"
+    de: "Guten Morgen, {name}!"
+    nl: "Goedemorgen, {name}!"
+    pt: "Bom dia, {name}!"
+    hi: "सुप्रभात, {name}!"
+  afternoon:
+    en: "Good afternoon, {name}!"
+    es: "¡Buenas tardes, {name}!"
+    fr: "Bon après-midi, {name}!"
+    ro: "Bună ziua, {name}!"
+    it: "Buon pomeriggio, {name}!"
+    de: "Guten Tag, {name}!"
+    nl: "Goedemiddag, {name}!"
+    pt: "Boa tarde, {name}!"
+    hi: "शुभ अपराह्न, {name}!"
+  evening:
+    en: "Good evening, {name}!"
+    es: "¡Buenas noches, {name}!"
+    fr: "Bonsoir, {name}!"
+    ro: "Bună seara, {name}!"
+    it: "Buona serata, {name}!"
+    de: "Guten Abend, {name}!"
+    nl: "Goedenavond, {name}!"
+    pt: "Boa noite, {name}!"
+    hi: "शुभ संध्या, {name}!"
+
+  timeOfDay:
+    morning: "09:00"
+    afternoon: "15:00"
+    evening: "20:00"
+
+  defaultTimeZone: "UTC"
+  timeZoneMap:
+    en: "America/New_York"
+    es: "Europe/Madrid"
+    fr: "Europe/Paris"
+    ro: "Europe/Bucharest"
+    it: "Europe/Rome"
+    de: "Europe/Berlin"
+    nl: "Europe/Amsterdam"
+    pt: "Europe/Lisbon"
+    hi: "Asia/Kolkata"
+
+
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/interview?useSSL=false&serverTimezone=UTC
