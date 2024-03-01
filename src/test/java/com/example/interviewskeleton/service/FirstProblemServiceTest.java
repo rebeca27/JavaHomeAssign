@@ -18,7 +18,7 @@ class FirstProblemServiceTest {
     }
 
     @Test
-    void testSaveWordsPerformance() throws ExecutionException, InterruptedException { // Declare that this method can throw Exception
+    void testSaveWordsPerformance()  {
         List<String> words = List.of("test", "words", "without", "letter", "A");
 
         long startTime = System.currentTimeMillis();
@@ -27,7 +27,7 @@ class FirstProblemServiceTest {
 
         System.out.println(endTime - startTime);
 
-        assertTrue(endTime - startTime < 5000, "Saving 5 words took more than 500ms.");
+        assertTrue(endTime - startTime < 500, "Saving 5 words took more than 500ms.");
     }
 
     @Test

@@ -4,9 +4,9 @@ package com.example.interviewskeleton.service;
 import com.example.interviewskeleton.config.GreetingConfig;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Clock;
 import java.time.DateTimeException;
 import java.time.LocalTime;
 import java.time.ZoneId;
@@ -19,7 +19,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class GreetingService {
     private final GreetingConfig greetingConfig;
-
+    private final Clock clock;
 
     public String getGreetingMessage(String userName, Locale locale) {
         String timeOfDay = determineTimeOfDay(locale);
@@ -44,10 +44,17 @@ public class GreetingService {
         }
     }
 
-    protected LocalTime getCurrentTime(ZoneId zoneId) {
-        return LocalTime.now(zoneId);
+    public GreetingConfig getGreetingConfig() {
+        return greetingConfig;
     }
 
+    public Clock getClock() {
+        return clock;
+    }
+
+    protected LocalTime getCurrentTime(ZoneId zoneId) {
+        return LocalTime.now(clock.withZone(zoneId));
+    }
     private ZoneId getZoneId(Locale locale) {
         String defaultZoneId = greetingConfig.getDefaultTimeZone();
         ZoneId zoneId;

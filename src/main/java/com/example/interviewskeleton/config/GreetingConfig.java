@@ -1,6 +1,9 @@
 package com.example.interviewskeleton.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.time.Clock;
 import java.util.Map;
 import java.time.LocalTime;
 
@@ -8,6 +11,10 @@ import java.time.LocalTime;
 @Configuration
 @ConfigurationProperties(prefix = "greeting")
 public class GreetingConfig {
+    @Bean
+    public Clock clock() {
+        return Clock.systemDefaultZone();
+    }
     private Map<String, String> morning;
     private Map<String, String> afternoon;
     private Map<String, String> evening;
